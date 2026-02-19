@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.Master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Demo ASP Shop</title>
+    <link href="Content/site.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="topbar">
+            <div class="container topbar-inner">
+                <a class="logo" href="Default.aspx">DuyTech</a>
+                <asp:TextBox ID="txtSearch" runat="server" CssClass="search" placeholder="Tìm laptop, PC, màn hình..." />
+                <asp:Button ID="btnSearch" runat="server" Text="Tìm" CssClass="btn" PostBackUrl="~/Default.aspx" />
+                <a class="cart-link" href="Cart.aspx">Giỏ hàng</a>
+            </div>
+        </header>
+
+        <nav class="menu">
+            <div class="container menu-inner">
+                <a href="Default.aspx">Trang chủ</a>
+                <a href="Default.aspx">Laptop</a>
+                <a href="Default.aspx">PC Gaming</a>
+                <a href="Default.aspx">Màn hình</a>
+                <a href="Default.aspx">Phụ kiện</a>
+                <a href="AdminProducts.aspx">Quan tri</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Siêu sale linh kiện - giá tốt mỗi ngày</h1>
+                <p>Giao diện demo phong cách website bán công nghệ, chạy với ASP.NET + Access.</p>
+            </div>
+        </section>
+
+        <main class="container content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </main>
+    </form>
+</body>
+</html>
