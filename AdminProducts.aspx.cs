@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -35,10 +35,25 @@ public partial class QuanLySanPham : System.Web.UI.Page
         lblThongBaoThanhCong.Visible = false;
 
         if (string.IsNullOrWhiteSpace(txtTenSanPham.Text))
+    
+        private void NapDanhSachSanPham()
+    {
+        ProductService db = new ProductService();
+        gvSanPham.DataSource = db.GetProductsTable(0);
+        gvSanPham.DataBind();
+    }
+
+    protected void btnLuu_Click(object sender, EventArgs e)
+    {
+        lblThongBaoLoi.Visible = false;
+        lblThongBaoThanhCong.Visible = false;
+
+        if (string.IsNullOrWhiteSpace(txtTenSanPham.Text))
         {
             lblThongBaoLoi.Visible = true;
             lblThongBaoLoi.Text = "Ten san pham khong duoc de trong.";
             return;
+        }
         }
 
         decimal gia;
